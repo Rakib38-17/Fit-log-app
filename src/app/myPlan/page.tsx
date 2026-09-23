@@ -1,10 +1,9 @@
-import HomePage from "./homePage/page";
-
+import React from 'react';
 
 const Page = () => {
     return (
         <div>
-            <HomePage></HomePage>
+            farad
         </div>
     );
 };
