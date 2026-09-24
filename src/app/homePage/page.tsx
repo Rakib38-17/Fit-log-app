@@ -3,11 +3,14 @@ import Banner from "../component/banner/banner";
 import BannerCard from "../component/bannerCard/bannerCard";
 import { Type } from "../type/type";
 
-  const getData = async() =>{
-    const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
-    const datas = await res.json()
-    return datas;
-  }
+const getData = async() => {
+    const res = await fetch('https://api.abcz.workers.dev/api/fitlog',
+        {next :{revalidate:10}});
+    if(!res.ok){
+        throw new Error('Data can not fetch');
+    }
+    return res.json();    
+}
 
 const HomePage = async() => {
 
@@ -15,7 +18,7 @@ const HomePage = async() => {
   console.log("data :", datas);
 
   return (
-    <>
+    <> 
     <Banner></Banner>
     <div className="ml-4 mb-8">
         <h2 className="font-bold text-4xl">THE LIBRARY</h2>

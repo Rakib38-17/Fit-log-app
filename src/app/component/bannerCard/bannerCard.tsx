@@ -10,7 +10,7 @@ const BannerCard = ({ data }: dataProbs) => {
   return (
     <div>
       <Link
-        href={`/workouts/${data.id}`}
+        href={`/homePage/${data.id}`}
         className="group block overflow-hidden rounded-xl border border-[#2b2f38] bg-[#15171d] transition-all duration-300 hover:-translate-y-1 hover:border-[#CCFF00]/50 hover:shadow-xl hover:shadow-[#CCFF00]/5">
   
         <div className="relative w-full  overflow-hidden sm:h-52">
