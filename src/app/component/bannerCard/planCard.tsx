@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 import { appContex } from "@/contex/appProvider";
 import { Type } from "@/app/type/type";
+import Link from "next/link";
 
 interface PlanCardProps {
   data: Type;
@@ -34,6 +35,10 @@ const PlanCard = ({ data, planType }: PlanCardProps) => {
     }
 
     toast.success(`"${data.name}" removed`);
+  };
+
+  const handleMarkAsDone = () => {
+    toast.success(`"${data.name}" marked as done`);
   };
 
   return (
@@ -95,18 +100,21 @@ const PlanCard = ({ data, planType }: PlanCardProps) => {
 
         {/* Desktop Buttons */}
         <div className="hidden shrink-0 items-center gap-2 sm:flex">
-
-          <button
+        
+        <Link href={`/homePage/${data.id}`}>
+            <button  
             className="rounded-full border border-[#3a414d] px-4 py-2 text-xs text-white transition hover:bg-[#1d222b]"
-          >
+            > 
             View Details
           </button>
-
-          <button
+          
+        </Link>
+          
+          <button onClick = {handleMarkAsDone}
             className="flex items-center gap-1 rounded-full bg-[#ccff00] px-4 py-2 text-xs font-bold text-black transition hover:bg-[#b9eb00]"
-          >
+          > 
             <Check size={14} />
-            Done
+            Mark as Done
           </button>
 
           <button
@@ -123,18 +131,13 @@ const PlanCard = ({ data, planType }: PlanCardProps) => {
       {/* Mobile Buttons */}
       <div className="mt-4 flex items-center gap-2 border-t border-[#292d36] pt-3 sm:hidden">
 
-        <button
-          className="flex-1 rounded-full border border-[#3a414d] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#1d222b]"
-        >
-          View Details
-        </button>
-
-        <button
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-[#ccff00] px-3 py-2 text-xs font-bold text-black transition hover:bg-[#b9eb00]"
-        >
-          <Check size={14} />
-          Done
-        </button>
+        <Link href={`/homePage/${data.id}`}>
+            <button
+            className="rounded-full border border-[#3a414d] px-4 py-2 text-xs text-white transition hover:bg-[#1d222b]"
+          >
+            View Details
+          </button>
+        </Link>
 
         <button
           onClick={handleDelete}

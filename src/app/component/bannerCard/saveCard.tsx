@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 import { appContex } from "@/contex/appProvider";
 import { Type } from "@/app/type/type";
+import Link from "next/link";
 
 interface PlanCardProps {
   data: Type;
@@ -39,10 +40,8 @@ const SaveCard = ({ data, planType }: PlanCardProps) => {
   return (
     <div className="w-full rounded-2xl border border-[#292d36] bg-[#12151b] p-4">
       
-      {/* Main Card */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
 
-        {/* Image */}
         <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-32">
           <Image
             src={data.image}
@@ -53,7 +52,6 @@ const SaveCard = ({ data, planType }: PlanCardProps) => {
           />
         </div>
 
-        {/* Content */}
         <div className="min-w-0 flex-1">
           <h2 className="text-base font-bold uppercase text-white">
             {data.name}
@@ -63,7 +61,6 @@ const SaveCard = ({ data, planType }: PlanCardProps) => {
             {data.equipment}
           </p>
 
-          {/* Stats */}
           <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-gray-300">
 
             <span className="flex items-center gap-1">
@@ -96,11 +93,13 @@ const SaveCard = ({ data, planType }: PlanCardProps) => {
         {/* Desktop Buttons */}
         <div className="hidden shrink-0 items-center gap-2 sm:flex">
 
-          <button
+          <Link href = {`/homePage/${data.id}`}>
+            <button
             className="rounded-full border border-[#3a414d] px-4 py-2 text-xs text-white transition hover:bg-[#1d222b]"
           >
             View Details
           </button>
+        </Link>
 
           <button
             onClick={handleDelete}
@@ -116,11 +115,14 @@ const SaveCard = ({ data, planType }: PlanCardProps) => {
       {/* Mobile Buttons */}
       <div className="mt-4 flex items-center gap-2 border-t border-[#292d36] pt-3 sm:hidden">
 
-        <button
-          className="flex-1 rounded-full border border-[#3a414d] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#1d222b]"
-        >
-          View Details
-        </button>
+        <Link href={`/homePage/${data.id}`}>
+            <button
+            className="rounded-full border border-[#3a414d] px-4 py-2 text-xs text-white transition hover:bg-[#1d222b]"
+          >
+            View Details
+          </button>
+        </Link>
+
         <button
           onClick={handleDelete}
           className="rounded-full p-2 text-gray-500 transition hover:bg-[#1d222b] hover:text-red-500"

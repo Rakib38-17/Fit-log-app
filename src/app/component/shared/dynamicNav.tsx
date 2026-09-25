@@ -14,28 +14,28 @@ const DynamicNav = () => {
   const { addPlan, savePlan } = context;
 
   return (
-    <nav className="flex items-center justify-center gap-8 p-5">
+    <nav className="flex items-center justify-center gap-4 p-5">
 
       {/* Plan */}
       <Link
-        href="../bannerCard/planCard.tsx"
+        href="/"
         className="flex items-center gap-2 text-gray-300 rounded-2xl"
       >
         <span>Plan</span>
 
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ccff00] font-bold text-black">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full  font-bold border text-gray-300">
           {addPlan.length}
         </span>
       </Link>
 
       {/* Saved */}
       <Link
-        href="../bannerCard/saveCard.tsx"
+        href="/"
         className="flex items-center gap-2 text-gray-300 rounded-2xl"
       >
         <span>Saved</span>
 
-        <span className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-600 text-gray-300">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full border  text-gray-300">
           {savePlan.length}
         </span>
       </Link>
