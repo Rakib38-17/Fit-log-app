@@ -1,3 +1,6 @@
+
+import PlanButton from "@/app/component/appDetails.tsx/planButton";
+import SaveButton from "@/app/component/appDetails.tsx/saveButton";
 import { Type } from "@/app/type/type";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,7 +44,7 @@ const FitLogDetailsPage = async ({params}: {params: Promise<{ id: string }>}) =>
 
         {/* Back button */}
         <Link
-          href="/fitlog"
+          href="/homePage"
           className="mb-6 inline-flex items-center gap-2 text-sm text-gray-400 transition hover:text-[#CCFF00]"
         >
           ← Back to workouts
@@ -184,19 +187,9 @@ const FitLogDetailsPage = async ({params}: {params: Promise<{ id: string }>}) =>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
 
-              <button
-                className="flex items-center justify-center gap-2 rounded-lg bg-[#CCFF00] px-5 py-3 text-xs font-bold text-black transition hover:bg-[#b9eb00] active:scale-95"
-              >
-                <span>＋</span>
-                Add to today&apos;s plan
-              </button>
+              <PlanButton  fit = {fit}></PlanButton>
 
-              <button
-                className="flex items-center justify-center gap-2 rounded-lg border border-[#3a3e48] px-5 py-3 text-xs font-medium text-white transition hover:bg-[#1b1e25] active:scale-95"
-              >
-                ♧
-                Save for later
-              </button>
+              <SaveButton   fit = {fit}></SaveButton>
 
             </div>
 

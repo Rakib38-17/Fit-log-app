@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/app/assets/logo.png";
+import DynamicNav from "./dynamicNav";
 
 const Navbar = () => {
   const link = (
@@ -57,8 +58,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className=" flex gap-4 navbar-end">
-          <a className="btn">plan</a>
-          <a className="btn">Saved</a>
+          <DynamicNav></DynamicNav>
         </div>
       </div>
     </nav>
