@@ -10,13 +10,13 @@ const Navbar = () => {
         <Link
           className="hover:bg-[#1A2312] hover:text-[#CCFF00] rounded-3xl"
           href="/homePage">
-          workouts{" "}
+          Workouts{" "}
         </Link>
       </li>
       <li>
         <Link className="rounded-3xl hover:bg-[#1A2312] hover:text-[#CCFF00]"
          href="/myPlan">
-          my plan{" "}
+          My Plan{" "}
         </Link>
       </li>
     </>

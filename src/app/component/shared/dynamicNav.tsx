@@ -19,11 +19,11 @@ const DynamicNav = () => {
       {/* Plan */}
       <Link
         href="/"
-        className="flex items-center gap-2 text-gray-300 rounded-2xl"
+        className="flex items-center gap-2 text-gray-300 rounded-2xl ]"
       >
         <span>Plan</span>
 
-        <span className="flex h-8 w-8 items-center justify-center rounded-full  font-bold border text-gray-300">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full  font-bold border bg-[#CCFF00] text-black">
           {addPlan.length}
         </span>
       </Link>

@@ -34,11 +34,12 @@ const PlanCard = ({ data, planType }: PlanCardProps) => {
       );
     }
 
-    toast.success(`"${data.name}" removed`);
+    toast.error(`"${data.name}" removed`);
   };
 
   const handleMarkAsDone = () => {
     toast.success(`"${data.name}" marked as done`);
+
   };
 
   return (
